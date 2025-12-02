@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Tea Packaging Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="app">
+
+    <aside class="sidebar">
+      <header class="controls">
+        
+        <div class="control">
+          <label for="caffeineSlider">Caffeine level</label>
+          <input type="range" id="caffeineSlider" min="1" max="3" step="1" value="1" />
+          <div class="ticks"><span>1</span><span>2</span><span>3</span></div>
+        </div>
+
+       
+        <div class="control">
+          <label for="shapeSelect">Tea form</label>
+          <select id="shapeSelect">
+            <option value="sachet">Teabags</option>
+            <option value="loose">Loose leaf</option>
+          </select>
+        </div>
+
+        
+        <div class="control">
+          <label for="teaTypeSelect">Tea type (container colour)</label>
+          <select id="teaTypeSelect">
+            <option value="green">Green tea</option>
+            <option value="oolong">Oolong</option>
+            <option value="white">White tea</option>
+            <option value="black">Black tea</option>
+          </select>
+        </div>
+
+       
+        <div class="control flavour-control">
+          <span class="flavour-label">Flavours (max 2)</span>
+          <div class="flavour-options">
+            <label><input type="checkbox" name="flavour" value="lemon" /> Lemon</label>
+            <label><input type="checkbox" name="flavour" value="ginger" /> Ginger</label>
+            <label><input type="checkbox" name="flavour" value="rose" /> Rose</label>
+            <label><input type="checkbox" name="flavour" value="lavender" /> Lavender</label>
+            <label><input type="checkbox" name="flavour" value="cinnamon" /> Cinnamon</label>
+          </div>
+        </div>
+
+        
+        <div class="control">
+          <label for="titleInput">Tea name</label>
+          <input id="titleInput" type="text" placeholder="Darjeeling First Flush" maxlength="40" />
+        </div>
+
+        
+        <div class="control">
+          <label for="teaSelect">Select tea (from CMS)</label>
+          <select id="teaSelect">
+            <option value="">Loading…</option>
+          </select>
+        </div>
+
+        <button id="exportBtn" class="export-btn">Download PNG</button>
+      </header>
+    </aside>
+
+  
+    <main class="main">
+      <div class="stage-wrap">
+        <div id="stage" class="stage">
+
+        
+          <img src="assets/corner-top-left.png" class="decor-corner corner-tl" alt="" />
+          <img src="assets/corner-top-left.png" class="decor-corner corner-tr" alt="" />
+          <img src="assets/corner-top-left.png" class="decor-corner corner-bl" alt="" />
+          <img src="assets/corner-top-left.png" class="decor-corner corner-br" alt="" />
+
+          
+          <img src="assets/border-left.png" class="side-border side-border-left" alt="" />
+          <img src="assets/border-left.png" class="side-border side-border-right" alt="" />
+
+          
+          <img id="flavourTop" class="layer flavour-top" alt="Flavour top" />
+
+          
+          <img src="assets/title-1.png" id="titleImg" class="layer title-image" alt="Brand title" />
+
+          
+          <img id="womanImg" class="layer woman" alt="Woman" />
+
+          
+          <img id="shapeImg" class="layer shape" alt="Shape" />
+
+          
+          <img id="flavourBottom" class="layer flavour-bottom" alt="Flavour bottom" />
+
+          
+          <svg id="titleRibbon" class="title-ribbon" viewBox="0 0 350 120" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <path id="titleCurve" d="M 25 30 Q 175 100 325 30" />
+            </defs>
+
+            
+            <path
+              d="M 25 30 
+                 Q 175 100 325 30
+                 L 325 75
+                 Q 175 135 25 75
+                 Z"
+              fill="#ffffff"
+              stroke="#111111"
+              stroke-width="3"
+            />
+
+            
+            <text font-family="serif" font-size="22" fill="#111111">
+              <textPath href="#titleCurve" startOffset="50%" text-anchor="middle" dy="6">
+                Tea Name
+              </textPath>
+            </text>
+          </svg>
+
+          
+          <div class="label-text label-left">
+            <span>Caffeine<br>Content</span>
+            <div id="caffeineLeafContainer" class="caffeine-leaves"></div>
+          </div>
+
+          
+          <div class="label-text label-right">
+            Net&nbsp;Wt.<br>12&nbsp;oz
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
