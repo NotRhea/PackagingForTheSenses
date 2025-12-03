@@ -233,7 +233,7 @@
   .title-ribbon text {
     letter-spacing: 0.03em;
     font-family: 'PP';
-    transform: translateY(23%);
+    transform: translateY(-23%);
   }
   
   
