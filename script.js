@@ -1,7 +1,6 @@
-let sheetID  = "1pokmog2TUlmLt57uFU2--VWgkk0O_pHesiNVbcG4YuI";
-let tabName  = "Tea"; 
-let opensheet_uri = https://opensheet.elk.sh/${sheetID}/${tabName};
-
+let sheetID = "1pokmog2TUlmLt57uFU2--VWgkk0O_pHesiNVbcG4YuI";
+let tabName = "Tea";
+let opensheet_uri = `https://opensheet.elk.sh/${sheetID}/${encodeURIComponent(tabName)}`;
 
 let teaData = [];
 
